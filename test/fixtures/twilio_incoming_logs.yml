@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sid: MyString
+  to: MyString
+  from: MyString
+  call_status: MyString
+  user_id: 
+  twilio_outgoing_log_id: 
+
+two:
+  sid: MyString
+  to: MyString
+  from: MyString
+  call_status: MyString
+  user_id: 
+  twilio_outgoing_log_id: 

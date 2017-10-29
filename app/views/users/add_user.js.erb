@@ -1,0 +1,3 @@
+//フォロー用のフォームをunfollowパーシャルで更新しフォロワーのカウントを更新
+$("#follow_form").html("<%= escape_javascript(render('users/session_unfollow')) %>");
+$("#sessionf").html('<%= session[:users_ids].count %>');

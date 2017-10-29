@@ -1,0 +1,21 @@
+<h1>一括問い合わせ</h1>
+<% if session[:users_ids].present? %>
+  <%= session[:users_ids].count %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@micropost, url: collective_inquiries_path) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :content %>
+      <%= f.text_field :content, class: 'form-control' %>
+
+      <% @users.each do |user| %>
+        <%= user.name %>
+        <%= f.check_box :user_id, { multiple: true }, user.id, nil %>
+      <% end %>
+
+      <%= f.submit "一括問い合わせ", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

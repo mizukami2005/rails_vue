@@ -1,0 +1,17 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= following_user_path(@user) %>">
+    <strong id="following" class="stat">
+      <%= @user.following.count %>
+    </strong>
+    following
+  </a>
+  <a href="<%= followers_user_path(@user)%>">
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    followers
+  </a>
+  <div id="sessionf"><%= sum_count(session[:users_ids], @user.active_relationships.pluck(:follower_id)) %></div>
+  <%= link_to '一括問い合わせ', new_collective_inquiry_path %>
+</div>

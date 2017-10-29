@@ -1,0 +1,11 @@
+<#% unless current_user?(@user) %>
+<%= session[:users_ids] %>
+
+<div id="follow_form">
+  <% if show_follow?(session[:users_ids], @user) %>
+    <%= render 'session_unfollow' %>
+  <% else %>
+    <%= render 'session_follow' %>
+  <% end %>
+</div>
+<%# end %>

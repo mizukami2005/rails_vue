@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sid: MyString
+  parent_call_sid: MyString
+  finished_call_time: 2017-08-10 22:59:14
+  to: MyString
+  from: MyString
+  call_status: MyString
+  duration: MyString
+  user_id: 
+
+two:
+  sid: MyString
+  parent_call_sid: MyString
+  finished_call_time: 2017-08-10 22:59:14
+  to: MyString
+  from: MyString
+  call_status: MyString
+  duration: MyString
+  user_id: 
