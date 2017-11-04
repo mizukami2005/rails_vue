@@ -1,14 +1,24 @@
 class CollectiveInquiriesController < ApplicationController
 
   def index
-  end
-
-  def new
     if logged_in?
       @users = User.where(id: (current_user.following_ids + session[:users_ids].to_a).uniq)
     else
       @users = User.where(id: session[:users_ids])
     end
+  end
+
+  def new
+    p "new"
+    p params[:user_ids]
+    @users = User.where(id: params[:user_ids])
+    p "user"
+    p @users
+    # if logged_in?
+    #   @users = User.where(id: (current_user.following_ids + session[:users_ids].to_a).uniq)
+    # else
+    #   @users = User.where(id: session[:users_ids])
+    # end
 
     @micropost = Micropost.new
   end

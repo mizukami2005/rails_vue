@@ -1,1 +1,16 @@
 <h1>一括問い合わせ</h1>
+
+<%= form_tag new_collective_inquiry_path, method: :get do %>
+
+  <%= check_box_tag :all, id: 'all' %>
+  <%= label_tag :all, 'すべて選択' %>
+
+  <br>
+
+  <% @users.each do |user| %>
+    <%= user.name %>
+    <%= check_box_tag 'user_ids[]', user.id, false %>
+  <% end %>
+
+  <%= submit_tag "一括問い合わせする", class: "btn btn-primary" %>
+<% end %>

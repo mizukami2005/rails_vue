@@ -13,5 +13,5 @@
     followers
   </a>
   <div id="sessionf"><%= sum_count(session[:users_ids], @user.active_relationships.pluck(:follower_id)) %></div>
-  <%= link_to '一括問い合わせ', new_collective_inquiry_path %>
+  <%= link_to '一括問い合わせ', collective_inquiries_path %>
 </div>
