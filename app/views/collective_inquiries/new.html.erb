@@ -12,7 +12,7 @@
 
       <% @users.each do |user| %>
         <%= user.name %>
-        <%= f.check_box :user_id, { multiple: true }, user.id, nil %>
+        <%= f.hidden_field :user_id, multiple: true, value: user.id %>
       <% end %>
 
       <%= f.submit "一括問い合わせ", class: "btn btn-primary" %>
